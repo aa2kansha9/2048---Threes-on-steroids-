@@ -1,0 +1,74 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial;
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+  }
+  h1{
+    font-size: 40px;
+    position: absolute;
+    top: 0%;
+    text-align: center;
+    font-style: italic;
+    font-weight: lighter;
+    color: #14213d;
+  }
+
+  p{
+    font-size: 30px;
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    padding: 10px;
+    color: #14213d;
+  }
+  
+  body {
+    background-color: #e6a4ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: 90px;
+    font-size: 7.5vmin;
+  }
+  
+  #game-board {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+    grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+    background-color: #e8ecdf;
+    gap: var(--cell-gap);
+    border-radius: 2vmin;
+    padding: var(--cell-gap);
+    position: relative;
+    
+  }
+  
+  .cell {
+    background-color: #e0c0c0;
+    border-radius: 1vmin;
+  }
+  
+  .tile {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 1vmin;
+    top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+    left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+    font-weight: bold;
+    background-color: hsl(200, 50%, var(--background-lightness));
+    color: hsl(200, 25%, var(--text-lightness));
+    animation: show 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+  }
+  
+  @keyframes show {
+    0% {
+      opacity: .5;
+      transform: scale(0);
+    }
+  }
